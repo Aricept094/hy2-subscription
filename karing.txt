@@ -1,0 +1,2 @@
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@82.47.63.218:8443/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#01-PL-8443-Stable
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@82.47.63.218:2096/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#02-PL-2096-Aggressive
