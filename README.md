@@ -3,16 +3,16 @@
 Stable subscription URL:
 
 ```text
-https://raw.githubusercontent.com/Aricept094/hy2-subscription/refs/heads/main/frankfurt.txt
+https://raw.githubusercontent.com/Aricept094/hy2-subscription/refs/heads/main/sub.txt
 ```
 
 One-click Karing import:
 
 ```text
-karing://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2FAricept094%2Fhy2-subscription%2Frefs%2Fheads%2Fmain%2Ffrankfurt.txt&name=Frankfurt%20Hysteria%202
+karing://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2FAricept094%2Fhy2-subscription%2Frefs%2Fheads%2Fmain%2Fsub.txt&name=Frankfurt%20Hysteria%202
 ```
 
-`frankfurt.txt` contains one proxy URI per line. Update that file to add, replace, or
+`sub.txt` contains one proxy URI per line. Update that file to add, replace, or
 remove servers without changing the subscription URL configured in clients.
 
 The feed intentionally contains only node URIs. Karing remains responsible for
