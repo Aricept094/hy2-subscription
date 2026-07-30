@@ -12,7 +12,7 @@ One-click Karing import:
 karing://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2FAricept094%2Fhy2-subscription%2Frefs%2Fheads%2Fmain%2Ffrankfurt.txt&name=Frankfurt%20Hysteria%202
 ```
 
-`sub.txt` contains one proxy URI per line. Update that file to add, replace, or
+`frankfurt.txt` contains one proxy URI per line. Update that file to add, replace, or
 remove servers without changing the subscription URL configured in clients.
 
 The feed intentionally contains only node URIs. Karing remains responsible for
