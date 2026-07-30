@@ -1,1 +1,4 @@
-hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@tele.gholamalimozi.top:443/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#Poland-Hysteria2
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@tele.gholamalimozi.top:443/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#01-PL-Domain-Salamander-443
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@tele.gholamalimozi.top:8443/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#02-PL-Domain-Salamander-8443
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@tele.gholamalimozi.top:2053/?sni=tele.gholamalimozi.top#03-PL-Domain-Plain-2053
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@82.47.63.218:2087/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#04-PL-IPv4-Salamander-2087
