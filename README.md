@@ -3,13 +3,13 @@
 Stable subscription URL:
 
 ```text
-https://raw.githubusercontent.com/Aricept094/hy2-subscription/refs/heads/main/karing.txt
+https://raw.githubusercontent.com/Aricept094/hy2-subscription/refs/heads/main/frankfurt.txt
 ```
 
 One-click Karing import:
 
 ```text
-karing://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2FAricept094%2Fhy2-subscription%2Frefs%2Fheads%2Fmain%2Fkaring.txt&name=Poland%20Hysteria%202
+karing://install-config?url=https%3A%2F%2Fraw.githubusercontent.com%2FAricept094%2Fhy2-subscription%2Frefs%2Fheads%2Fmain%2Ffrankfurt.txt&name=Frankfurt%20Hysteria%202
 ```
 
 `sub.txt` contains one proxy URI per line. Update that file to add, replace, or
