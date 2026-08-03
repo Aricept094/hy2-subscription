@@ -1,3 +1,9 @@
+//profile-title: Frankfurt Hysteria 2 (DE)
+//profile-update-interval: 24
 hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@209.38.235.72:8443/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#01-DE-8443-Stable
 hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@209.38.235.72:2096/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#02-DE-2096-Aggressive
 hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@209.38.235.72:8444/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#03-DE-8444-Standard-v4
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@209.38.235.72:2053/?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#04-DE-2053-Tuned
+hysteria2://AKxvT3JvhEHdNqfyYhgf8xF3MT38_aQH91kYNRiTm9w%3D@209.38.235.72:30000,30001-30100?obfs=salamander&obfs-password=IkbDT-17PLf00ozQBcgndEjaefOsz8BR&sni=tele.gholamalimozi.top#05-DE-30000-PortHop
+hysteria2://252add0f75a2babdf9e9340d626c6d2461c975f3a6bbcdf58be252e334d43f6d@209.38.235.72:20000,20001-20999/?sni=tele.gholamalimozi.top#06-DE-20000-20999-Plain-PortHop
+hysteria2://252add0f75a2babdf9e9340d626c6d2461c975f3a6bbcdf58be252e334d43f6d@209.38.235.72:21000,21001-21999/?obfs=salamander&obfs-password=a6f8b15a8a62efb74d4e0fbdc8a2683c9b53e27cfae22373123936dd6e6c8252&sni=tele.gholamalimozi.top#07-DE-21000-21999-Salamander-PortHop
