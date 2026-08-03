@@ -22,5 +22,18 @@ Salamander obfuscation settings. It does not include `up` or `down` bandwidth
 hints, so Karing does not inadvertently activate Brutal congestion control with
 an inaccurate link rate.
 
+## Port hopping
+
+The final node uses Karing-compatible Hysteria 2 multi-port URI syntax:
+`hysteria2://...:30000,30001-30100?...`. Port `30000` is the server's base
+listener and `30001-30100` is the hopping range. Karing's URI importer requires
+the base port before the comma; a bare `:30000-30100` range can be silently
+dropped even though it is accepted by the official Hysteria client.
+
+After updating Karing, refresh or re-import this profile so the stored node is
+replaced. If an iOS build shows the final node as a single fixed port, update
+Karing before troubleshooting the server; Karing has had platform-specific
+port-hopping and `server_ports` conversion issues.
+
 This repository is public. Anyone with access to it can read and use the proxy
 credentials in the subscription.
