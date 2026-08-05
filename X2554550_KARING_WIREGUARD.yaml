@@ -1,0 +1,60 @@
+# Karing-compatible Clash/Mihomo WireGuard profile
+mixed-port: 7890
+allow-lan: false
+mode: rule
+log-level: info
+ipv6: true
+
+proxies:
+  - name: "X2554550_SMART1"
+    type: wireguard
+    private-key: "CMv7BueMAswPyAisUKJPJxEZVcsoTihBxLma6soB01k="
+    server: "smart1.pingkhor.xyz"
+    port: 907
+    ip: "10.38.250.182"
+    public-key: "fh9AAOXeha4QTp6+aEOQISqBD2pGMX1FMqhtM0NkmRY="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    udp: true
+    mtu: 1300
+    persistent-keepalive: 11
+    remote-dns-resolve: true
+    dns: ["8.8.8.8", "8.8.4.4"]
+
+  - name: "X2554550_SMART2"
+    type: wireguard
+    private-key: "CMv7BueMAswPyAisUKJPJxEZVcsoTihBxLma6soB01k="
+    server: "smart2.pingkhor.xyz"
+    port: 907
+    ip: "10.38.250.182"
+    public-key: "fh9AAOXeha4QTp6+aEOQISqBD2pGMX1FMqhtM0NkmRY="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    udp: true
+    mtu: 1300
+    persistent-keepalive: 11
+    remote-dns-resolve: true
+    dns: ["8.8.8.8", "8.8.4.4"]
+
+  - name: "X2554550_SMART3"
+    type: wireguard
+    private-key: "CMv7BueMAswPyAisUKJPJxEZVcsoTihBxLma6soB01k="
+    server: "smart3.pingkhor.xyz"
+    port: 907
+    ip: "10.38.250.182"
+    public-key: "fh9AAOXeha4QTp6+aEOQISqBD2pGMX1FMqhtM0NkmRY="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    udp: true
+    mtu: 1300
+    persistent-keepalive: 11
+    remote-dns-resolve: true
+    dns: ["8.8.8.8", "8.8.4.4"]
+
+proxy-groups:
+  - name: "X2554550 WireGuard"
+    type: select
+    proxies:
+      - "X2554550_SMART1"
+      - "X2554550_SMART2"
+      - "X2554550_SMART3"
+
+rules:
+  - MATCH,X2554550 WireGuard
