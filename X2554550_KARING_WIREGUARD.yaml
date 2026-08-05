@@ -48,6 +48,19 @@ proxies:
     remote-dns-resolve: true
     dns: ["8.8.8.8", "8.8.4.4"]
 
+  - name: "wg-AZ-2"
+    type: wireguard
+    private-key: "uCGhHLMEx68KUk9bbv/3lQXc4EJgTTHwfZkI6VX1/2w="
+    server: "45.83.124.1"
+    port: 51820
+    ip: "10.2.0.2"
+    public-key: "DhNpGwLwzXGSwKXySOUXcmJStXGoGdlrfPZUtmC1jwY="
+    allowed-ips: ["0.0.0.0/0", "::/0"]
+    udp: true
+    persistent-keepalive: 25
+    remote-dns-resolve: true
+    dns: ["10.2.0.1"]
+
 proxy-groups:
   - name: "X2554550 WireGuard"
     type: select
@@ -55,6 +68,7 @@ proxy-groups:
       - "X2554550_SMART1"
       - "X2554550_SMART2"
       - "X2554550_SMART3"
+      - "wg-AZ-2"
 
 rules:
   - MATCH,X2554550 WireGuard
