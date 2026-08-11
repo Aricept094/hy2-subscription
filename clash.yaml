@@ -30,7 +30,7 @@ proxies:
   - name: "Hy2-P4 Fingerprint"
     type: hysteria2
     server: chip.gholamalimozi.top
-    ports: 443
+    ports: 443,20000-30000
     hop-interval: 30
     password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
     obfs: salamander
@@ -103,10 +103,10 @@ proxies:
     alpn:
       - h3
     client-fingerprint: chrome
-  - name: "Hy2 443-Only"
+  - name: "Hy2 27000-Only"
     type: hysteria2
     server: chip.gholamalimozi.top
-    ports: 443
+    ports: 27000
     hop-interval: 30
     password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
     obfs: salamander
