@@ -1,5 +1,5 @@
 proxies:
-  - name: Iran-Hy2-Frankfurt
+  - name: "Hy2-P10 Hardened"
     type: hysteria2
     server: chip.gholamalimozi.top
     ports: 443,20000-30000
@@ -13,3 +13,135 @@ proxies:
     alpn:
       - h3
     client-fingerprint: chrome
+  - name: "Hy2-P2 Daily"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: 30
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2-P4 Fingerprint"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443
+    hop-interval: 30
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: safari
+  - name: "Hy2-P8 Brutal-20"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "8-15"
+    up: 20
+    down: 20
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2-P8 Brutal-50"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "8-15"
+    up: 50
+    down: 50
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2-P8 Brutal-100"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "8-15"
+    up: 100
+    down: 100
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2 Range-Random"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 20000-30000
+    hop-interval: "8-15"
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2 443-Only"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443
+    hop-interval: 30
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: firefox
+  - name: "Hy2 Fast-Hop"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "5-10"
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
+  - name: "Hy2 Firefox-fp"
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "8-15"
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: firefox
