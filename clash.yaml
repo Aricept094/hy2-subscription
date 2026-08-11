@@ -1,0 +1,15 @@
+proxies:
+  - name: Iran-Hy2-Frankfurt
+    type: hysteria2
+    server: chip.gholamalimozi.top
+    ports: 443,20000-30000
+    hop-interval: "8-15"
+    password: 15a6ca97cf3a64dc17c799604c6a4500454c87d220442531a9ceff66979dc4e1
+    obfs: salamander
+    obfs-password: b45c33e8b4305ecbb81f0edd288ecce7d12a6ee9d3b92f83b2b4ddcea9aef5e0
+    sni: chip.gholamalimozi.top
+    fingerprint: ca47aae7cb334b2933b9006ff92998690b713f5598ccfc0f05c6ce83b03b62f1
+    skip-cert-verify: false
+    alpn:
+      - h3
+    client-fingerprint: chrome
