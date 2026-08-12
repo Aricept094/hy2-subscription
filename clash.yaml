@@ -1,3 +1,73 @@
+# mihomo §7.6 — Iran-first block, MAXIMAL form (R2.1)
+# Target: mihomo >= 1.19.x (Clash Verge Rev 2.5.2 bundles mihomo 1.19.29)
+# Validated: mihomo -t -f <this file> on mihomo v1.19.29 linux-amd64 (2026-08-12)
+#
+# IMPORTANT — no .srs in mihomo 1.19.x: mihomo has NO sing-box rule-set (.srs)
+# support in the 1.19.x line. GeoIP/GeoSite rules use geodata-mode .dat files
+# (MetaCubeX) only. sing-box rule_sets (chocolate4u / SagerNet .srs) are NOT
+# consumable here; do not try to point rule-provider at .srs URLs.
+#
+# GEOSITE category name: the current MetaCubeX/meta-rules-dat@release geosite.dat
+# ships the Iran category as "CATEGORY-IR" (verified 2026-08-12: bare "ir" is not
+# present and GEOSITE,IR,DIRECT fails the config test with "list ir not found").
+# GEOSITE,CATEGORY-IR,DIRECT loads 190 records. GEOIP,IR,DIRECT loads 2,752 records.
+#
+# Failure semantics of geodata download (MEASURED 2026-08-12, mihomo 1.19.29):
+# a failed/404 geox-url fetch stores the invalid payload, GEOIP/GEOSITE rules then
+# fail to decode, and mihomo EXITS FATAL at startup (exit 1) with:
+#   level=fatal msg="Parse config error: rules[0] [GEOIP,IR,DIRECT] error: [GeoIP]
+#   failed to decode geodata file: GeoIP.dat, base error: proto: cannot parse
+#   invalid wire-format data"
+# There is NO degraded/partial mode and NO retry within the same start. Operator
+# must verify geox-url reachability + file integrity at deploy time and watch
+# startup logs. The @latest branch URL 404s (verified) — never use it; @release only.
+
+mixed-port: 7890
+allow-lan: false
+bind-address: "*"
+mode: rule
+log-level: info
+ipv6: false
+
+# --- GeoData (MetaCubeX/meta-rules-dat @release — NOT @latest: that URL 404s) ---
+geodata-mode: true
+geox-url:
+  geoip: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geoip.dat"
+  geosite: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/geosite.dat"
+  mmdb: "https://cdn.jsdelivr.net/gh/MetaCubeX/meta-rules-dat@release/country.mmdb"
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - '*.ir'        # .ir never fake-ips: GEOIP/GEOSITE need real answers for .ir matching
+    - '+.lan'
+    - '+.local'
+  default-nameserver:
+    - 1.1.1.1
+  nameserver:
+    - https://1.1.1.1/dns-query
+    - https://8.8.8.8/dns-query
+  nameserver-policy:
+    '+.ir':
+      - 185.55.226.26   # Begzar plain DNS — DoH hostname dns.begzar.ir is NXDOMAIN-public (T3, 2026-08-12)
+      - 185.55.226.24   # Begzar alt — in-country re-verify per §4.6 D10 before relying on it
+  proxy-server-nameserver:
+    - 1.1.1.1           # bootstrap for proxy-server hostnames; never resolved through the tunnel
+  fallback:
+    - https://8.8.8.8/dns-query
+  fallback-filter:
+    geoip: true
+    geoip-code: IR      # answers asserting an IR origin are trusted for .ir policy; others fall back
+    ipcidr:
+      - 240.0.0.0/4
+
+# --- 10 hysteria2 nodes (per-node ports/hop-interval/bbr-profile retained) ---
+# All point at the same Profile 2/10 server. Per the 2026-08-12 wire-port finding:
+# NEVER ship 443-only nodes for Iran — union/range nodes only. Fingerprint =
+# sha256 hex pin from `openssl x509 -fingerprint -sha256` (NOT pinSHA256).
 proxies:
   - name: "Hy2-P10 Hardened"
     type: hysteria2
@@ -145,3 +215,64 @@ proxies:
     alpn:
       - h3
     client-fingerprint: firefox
+
+proxy-groups:
+  - name: "auto"
+    type: url-test                 # urltest over the 10 nodes
+    proxies:
+      - Hy2-P10 Hardened
+      - Hy2-P2 Daily
+      - Hy2-P4 Fingerprint
+      - Hy2-P8 Brutal-20
+      - Hy2-P8 Brutal-50
+      - Hy2-P8 Brutal-100
+      - Hy2 Range-Random
+      - Hy2 27000-Only
+      - Hy2 Fast-Hop
+      - Hy2 Firefox-fp
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+  - name: "fallback"
+    type: fallback                 # flat group over the same nodes; do NOT nest (bug #2588)
+    proxies:
+      - Hy2-P10 Hardened
+      - Hy2-P2 Daily
+      - Hy2-P4 Fingerprint
+      - Hy2-P8 Brutal-20
+      - Hy2-P8 Brutal-50
+      - Hy2-P8 Brutal-100
+      - Hy2 Range-Random
+      - Hy2 27000-Only
+      - Hy2 Fast-Hop
+      - Hy2 Firefox-fp
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+  - name: "PROXY"
+    type: select                   # operator picks: auto / fallback / individual node
+    proxies:
+      - auto
+      - fallback
+      - Hy2-P10 Hardened
+      - Hy2-P2 Daily
+      - Hy2-P4 Fingerprint
+      - Hy2-P8 Brutal-20
+      - Hy2-P8 Brutal-50
+      - Hy2-P8 Brutal-100
+      - Hy2 Range-Random
+      - Hy2 27000-Only
+      - Hy2 Fast-Hop
+      - Hy2 Firefox-fp
+
+# Iran-first rule order: private/loopback and the fake-ip range first, then IR
+# direct, then everything else via PROXY. NEVER a broad-direct Cloudflare/anycast
+# rule — foreign anycast IPs must traverse the tunnel.
+rules:
+  - IP-CIDR,127.0.0.0/8,DIRECT
+  - IP-CIDR,10.0.0.0/8,DIRECT
+  - IP-CIDR,172.16.0.0/12,DIRECT
+  - IP-CIDR,192.168.0.0/16,DIRECT
+  - IP-CIDR,198.18.0.1/16,DIRECT,no-resolve   # the fake-ip range itself
+  - GEOIP,IR,DIRECT
+  - GEOSITE,CATEGORY-IR,DIRECT               # NOT "GEOSITE,IR" — that list does not exist in the current dat (verified)
+  - DOMAIN-SUFFIX,ir,DIRECT
+  - MATCH,PROXY
